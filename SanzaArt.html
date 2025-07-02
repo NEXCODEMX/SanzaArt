@@ -1,0 +1,1179 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sanza.ART - Cuadros Personalizados de Lujo</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-gold: #D4AF37;
+            --dark-gold: #B8941F;
+            --deep-purple: #4A148C;
+            --light-purple: #7B1FA2;
+            --elegant-black: #1A1A1A;
+            --pure-white: #FFFFFF;
+            --soft-gray: #F8F9FA;
+            --text-gray: #666666;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--elegant-black);
+            overflow-x: hidden;
+        }
+
+        .elegant-title {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+        }
+
+        /* Header & Navigation */
+        .header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            z-index: 1000;
+            padding: 1rem 0;
+            transition: all 0.3s ease;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo img {
+            height: 50px;
+            width: auto;
+        }
+
+        .logo-text {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--primary-gold), var(--deep-purple));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-menu a {
+            text-decoration: none;
+            color: var(--elegant-black);
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .nav-menu a:hover {
+            color: var(--primary-gold);
+            transform: translateY(-2px);
+        }
+
+        .nav-menu a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, var(--primary-gold), var(--deep-purple));
+            transition: width 0.3s ease;
+        }
+
+        .nav-menu a:hover::after {
+            width: 100%;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(135deg, var(--pure-white) 0%, var(--soft-gray) 50%, rgba(212, 175, 55, 0.1) 100%);
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 60%;
+            height: 100%;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="20" cy="20" r="1" fill="%23D4AF37" opacity="0.1"/><circle cx="80" cy="80" r="1" fill="%234A148C" opacity="0.1"/><circle cx="40" cy="60" r="1" fill="%23D4AF37" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+            opacity: 0.3;
+        }
+
+        .hero-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            z-index: 2;
+            position: relative;
+        }
+
+        .hero-text h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+            background: linear-gradient(135deg, var(--elegant-black), var(--deep-purple));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-subtitle {
+            font-size: 1.3rem;
+            color: var(--text-gray);
+            margin-bottom: 2rem;
+            font-weight: 300;
+        }
+
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 1rem 2rem;
+            background: linear-gradient(135deg, var(--primary-gold), var(--dark-gold));
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.3);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(212, 175, 55, 0.4);
+        }
+
+        .hero-image {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .floating-frame {
+            width: 300px;
+            height: 400px;
+            background: var(--pure-white);
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            transform: rotate(-5deg);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .floating-frame:hover {
+            transform: rotate(0deg) scale(1.05);
+        }
+
+        .floating-frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        .floating-frame::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, transparent, rgba(212, 175, 55, 0.1), transparent);
+            pointer-events: none;
+        }
+
+        /* Services Section */
+        .services {
+            padding: 8rem 0;
+            background: var(--pure-white);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, var(--elegant-black), var(--deep-purple));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: var(--text-gray);
+            font-size: 1.2rem;
+            margin-bottom: 4rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: var(--pure-white);
+            padding: 2.5rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-gold), var(--deep-purple));
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+        }
+
+        .service-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--primary-gold), var(--deep-purple));
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .service-icon i {
+            font-size: 1.5rem;
+            color: white;
+        }
+
+        .service-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--elegant-black);
+        }
+
+        .service-card p {
+            color: var(--text-gray);
+            line-height: 1.6;
+        }
+
+        /* Products Gallery */
+        .products {
+            padding: 8rem 0;
+            background: linear-gradient(135deg, var(--soft-gray) 0%, rgba(212, 175, 55, 0.05) 100%);
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 4rem;
+        }
+
+        .product-card {
+            background: var(--pure-white);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.15);
+        }
+
+        .product-image {
+            height: 250px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .product-card:hover .product-image img {
+            transform: scale(1.1);
+        }
+
+        .product-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, rgba(212, 175, 55, 0.8), rgba(74, 20, 140, 0.8));
+            opacity: 0;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .product-card:hover .product-overlay {
+            opacity: 1;
+        }
+
+        .overlay-button {
+            background: var(--pure-white);
+            color: var(--elegant-black);
+            padding: 0.8rem 1.5rem;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            transform: translateY(20px);
+            transition: all 0.3s ease;
+        }
+
+        .product-card:hover .overlay-button {
+            transform: translateY(0);
+        }
+
+        .product-info {
+            padding: 1.5rem;
+        }
+
+        .product-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--elegant-black);
+        }
+
+        .product-description {
+            color: var(--text-gray);
+            margin-bottom: 1rem;
+            font-size: 0.95rem;
+        }
+
+        .product-rating {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .stars {
+            color: var(--primary-gold);
+        }
+
+        .rating-text {
+            color: var(--text-gray);
+            font-size: 0.9rem;
+        }
+
+        .product-price {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--deep-purple);
+        }
+
+        /* Pricing Section */
+        .pricing {
+            padding: 8rem 0;
+            background: var(--pure-white);
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 4rem;
+            margin-top: 4rem;
+        }
+
+        .pricing-category {
+            background: linear-gradient(135deg, var(--pure-white), var(--soft-gray));
+            border-radius: 30px;
+            padding: 3rem;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .pricing-category::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, var(--primary-gold), var(--deep-purple));
+        }
+
+        .pricing-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .pricing-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--elegant-black);
+            margin-bottom: 0.5rem;
+        }
+
+        .pricing-subtitle {
+            color: var(--text-gray);
+            font-size: 1rem;
+        }
+
+        .price-list {
+            list-style: none;
+        }
+
+        .price-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+        }
+
+        .price-item:last-child {
+            border-bottom: none;
+        }
+
+        .price-size {
+            font-weight: 500;
+            color: var(--elegant-black);
+        }
+
+        .price-value {
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: var(--deep-purple);
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 8rem 0;
+            background: linear-gradient(135deg, var(--elegant-black) 0%, var(--deep-purple) 100%);
+            color: var(--pure-white);
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+            margin-top: 4rem;
+        }
+
+        .contact-card {
+            text-align: center;
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .contact-card:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        .contact-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--primary-gold);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+        }
+
+        .contact-icon i {
+            font-size: 1.5rem;
+            color: var(--elegant-black);
+        }
+
+        .contact-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+        }
+
+        .contact-card p {
+            opacity: 0.9;
+            line-height: 1.6;
+        }
+
+        .contact-card a {
+            color: var(--primary-gold);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .contact-card a:hover {
+            color: var(--pure-white);
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--elegant-black);
+            color: var(--pure-white);
+            padding: 3rem 0 1rem;
+            text-align: center;
+        }
+
+        .footer-content {
+            margin-bottom: 2rem;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .social-link {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--primary-gold), var(--deep-purple));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .social-link:hover {
+            transform: translateY(-3px) scale(1.1);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 1rem;
+            font-size: 0.9rem;
+            opacity: 0.7;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in-up {
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+            }
+
+            .hero-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .hero-text h1 {
+                font-size: 2.5rem;
+            }
+
+            .floating-frame {
+                width: 250px;
+                height: 350px;
+            }
+
+            .pricing-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="nav-container">
+            <div class="logo">
+                <img src="logo.png" alt="Sanza.ART Logo">
+                <span class="logo-text">Sanza.ART</span>
+            </div>
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="#inicio">Inicio</a></li>
+                    <li><a href="#servicios">Servicios</a></li>
+                    <li><a href="#productos">Galería</a></li>
+                    <li><a href="#precios">Precios</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="hero">
+        <div class="hero-content">
+            <div class="hero-text fade-in-up">
+                <h1 class="elegant-title">Transforma tus Recuerdos en Arte</h1>
+                <p class="hero-subtitle">Creamos cuadros personalizados de alta calidad con impresión litográfica y acabados premium. Cada pieza es única, como tus momentos más especiales.</p>
+                <a href="#contacto" class="cta-button">
+                    <i class="fas fa-palette"></i>
+                    Crear mi Cuadro
+                </a>
+            </div>
+            <div class="hero-image">
+                <div class="floating-frame">
+                    <img src="Cuadro9.jpg" alt="Cuadro personalizado ejemplo">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="servicios" class="services">
+        <div class="container">
+            <h2 class="section-title elegant-title">Nuestros Servicios</h2>
+            <p class="section-subtitle">Ofrecemos soluciones completas para convertir tus imágenes favoritas en obras de arte duraderas</p>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-image"></i>
+                    </div>
+                    <h3 class="elegant-title">Impresión Litográfica</h3>
+                    <p>Utilizamos tecnología de impresión litográfica de alta resolución montada en bastidor de madera para garantizar la máxima calidad y durabilidad.</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-brush"></i>
+                    </div>
+                    <h3 class="elegant-title">Acabado Texturizado</h3>
+                    <p>Nuestro terminado texturizado simula la técnica del óleo, dando a tu cuadro una apariencia y tacto profesional que impresiona.</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-gem"></i>
+                    </div>
+                    <h3 class="elegant-title">Encapsulado en Resina</h3>
+                    <p>Para mayor protección y un acabado brillante excepcional, ofrecemos encapsulado en resina que realza los colores y protege tu inversión.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Gallery -->
+    <section id="productos" class="products">
+        <div class="container">
+            <h2 class="section-title elegant-title">Galería de Creaciones</h2>
+            <p class="section-subtitle">Descubre algunos de nuestros trabajos más destacados y la satisfacción de nuestros clientes</p>
+            
+            <div class="products-grid">
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="Cuadro1.jpg" alt="Retrato familiar personalizado">
+                        <div class="product-overlay">
+                            <a href="#contacto" class="overlay-button">Solicitar Cotización</a>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Retrato Familiar Premium</h3>
+                        <p class="product-description">Hermoso retrato familiar con acabado texturizado que captura cada detalle con precisión excepcional.</p>
+                        <div class="product-rating">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                        <span class="rating-text">"Quedé fascinada con el resultado" - María G.</span>
+                        <div class="product-price">Desde $250</div>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="Cuadro2.jpg" alt="Paisaje urbano moderno">
+                        <div class="product-overlay">
+                            <a href="#contacto" class="overlay-button">Solicitar Cotización</a>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Paisaje Urbano Moderno</h3>
+                        <p class="product-description">Impresión de alta calidad con encapsulado en resina, ideal para espacios contemporáneos.</p>
+                        <div class="product-rating">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                        <span class="rating-text">"Calidad excepcional" - Carlos R.</span>
+                        <div class="product-price">Desde $450</div>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="Cuadro3.jpg" alt="Mascotas adorables">
+                        <div class="product-overlay">
+                            <a href="#contacto" class="overlay-button">Solicitar Cotización</a>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Retratos de Mascotas</h3>
+                        <p class="product-description">Inmortalizamos a tu compañero fiel con colores vibrantes y detalles que capturan su personalidad.</p>
+                        <div class="product-rating">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                        <div class="product-price">Desde $250</div>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="Cuadro4.jpg" alt="Arte abstracto vibrante">
+                        <div class="product-overlay">
+                            <a href="#contacto" class="overlay-button">Solicitar Cotización</a>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Arte Abstracto Vibrante</h3>
+                        <p class="product-description">Diseños únicos con colores intensos y acabado brillante que transforma cualquier espacio.</p>
+                        <div class="product-rating">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                        <span class="rating-text">"Perfecto para mi sala" - Luis M.</span>
+                        <div class="product-price">Desde $500</div>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="Cuadro5.jpg" alt="Mascotas adorables">
+                        <div class="product-overlay">
+                            <a href="#contacto" class="overlay-button">Solicitar Cotización</a>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Retratos de Mascotas</h3>
+                        <p class="product-description">Inmortalizamos a tu compañero fiel con colores vibrantes y detalles que capturan su personalidad.</p>
+                        <div class="product-rating">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="Cuadro6.jpg" alt="Mascotas adorables">
+                        <div class="product-overlay">
+                            <a href="#contacto" class="overlay-button">Solicitar Cotización</a>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Retratos de Mascotas</h3>
+                        <p class="product-description">Inmortalizamos a tu compañero fiel con colores vibrantes y detalles que capturan su personalidad.</p>
+                        <div class="product-rating">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                        <div class="product-price">Desde $250</div>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="Cuadro7.jpg" alt="Mascotas adorables">
+                        <div class="product-overlay">
+                            <a href="#contacto" class="overlay-button">Solicitar Cotización</a>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Retratos de Mascotas</h3>
+                        <p class="product-description">Inmortalizamos a tu compañero fiel con colores vibrantes y detalles que capturan su personalidad.</p>
+                        <div class="product-rating">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                        <div class="product-price">Desde $250</div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="Cuadro8.jpg" alt="Mascotas adorables">
+                        <div class="product-overlay">
+                            <a href="#contacto" class="overlay-button">Solicitar Cotización</a>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Retratos de Mascotas</h3>
+                        <p class="product-description">Inmortalizamos a tu compañero fiel con colores vibrantes y detalles que capturan su personalidad.</p>
+                        <div class="product-rating">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                        <div class="product-price">Desde $250</div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="Cuadro9.jpg" alt="Mascotas adorables">
+                        <div class="product-overlay">
+                            <a href="#contacto" class="overlay-button">Solicitar Cotización</a>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Retratos de Mascotas</h3>
+                        <p class="product-description">Inmortalizamos a tu compañero fiel con colores vibrantes y detalles que capturan su personalidad.</p>
+                        <div class="product-rating">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                        <div class="product-price">Desde $250</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="precios" class="pricing">
+        <div class="container">
+            <h2 class="section-title elegant-title">Nuestros Precios</h2>
+            <p class="section-subtitle">Opciones flexibles para cada presupuesto, siempre con la máxima calidad</p>
+            
+            <div class="pricing-grid">
+                <div class="pricing-category">
+                    <div class="pricing-header">
+                        <h3 class="pricing-title elegant-title">Terminado Texturizado</h3>
+                        <p class="pricing-subtitle">Simula la técnica del óleo con textura realista</p>
+                    </div>
+                    <ul class="price-list">
+                        <li class="price-item">
+                            <span class="price-size">28x40cm</span>
+                            <span class="price-value">$250</span>
+                        </li>
+                        <li class="price-item">
+                            <span class="price-size">40x50cm</span>
+                            <span class="price-value">$500</span>
+                        </li>
+                        <li class="price-item">
+                            <span class="price-size">50x70cm</span>
+                            <span class="price-value">$700</span>
+                        </li>
+                        <li class="price-item">
+                            <span class="price-size">85x55cm</span>
+                            <span class="price-value">$1,000</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="pricing-category">
+                    <div class="pricing-header">
+                        <h3 class="pricing-title elegant-title">Encapsulado en Resina</h3>
+                        <p class="pricing-subtitle">Acabado brillante premium con máxima protección</p>
+                    </div>
+                    <ul class="price-list">
+                        <li class="price-item">
+                            <span class="price-size">28x40cm</span>
+                            <span class="price-value">$450</span>
+                        </li>
+                        <li class="price-item">
+                            <span class="price-size">40x50cm</span>
+                            <span class="price-value">$850</span>
+                        </li>
+                        <li class="price-item">
+                            <span class="price-size">50x70cm</span>
+                            <span class="price-value">$1,350</span>
+                        </li>
+                        <li class="price-item">
+                            <span class="price-size">85x55cm</span>
+                            <span class="price-value">$1,850</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contacto" class="contact">
+        <div class="container">
+            <h2 class="section-title elegant-title">Contáctanos</h2>
+            <p class="section-subtitle">Estamos listos para crear tu obra de arte personalizada</p>
+            
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fab fa-instagram"></i>
+                    </div>
+                    <h3>Instagram</h3>
+                    <p>Síguenos para ver nuestros últimos trabajos y ofertas especiales</p>
+                    <p><a href="https://www.instagram.com/sanza.art/" target="_blank">@sanza.art</a></p>
+                </div>
+                
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <h3>Correo Electrónico</h3>
+                    <p>Envíanos tu imagen y te cotizamos sin compromiso</p>
+                    <p><a href="mailto:sanza.art@hotmail.com">sanza.art@hotmail.com</a></p>
+                </div>
+                
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-phone"></i>
+                    </div>
+                    <h3>Teléfono</h3>
+                    <p>Llámanos para resolver todas tus dudas sobre nuestros servicios</p>
+                    <p><a href="tel:3311781157">33 1178 1157</a></p>
+                </div>
+                
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fab fa-facebook"></i>
+                    </div>
+                    <h3>Facebook</h3>
+                    <p>Únete a nuestra comunidad y comparte tus experiencias</p>
+                    <p><a href="https://www.facebook.com/sanza.art" target="_blank">Sanza.ART</a></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="social-links">
+                    <a href="https://www.instagram.com/sanza.art/" class="social-link" target="_blank">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://www.facebook.com/sanza.art" class="social-link" target="_blank">
+                        <i class="fab fa-facebook"></i>
+                    </a>
+                    <a href="mailto:sanza.art@hotmail.com" class="social-link">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                    <a href="tel:3311781157" class="social-link">
+                        <i class="fas fa-phone"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Sanza.ART. Todos los derechos reservados. | Desarrollado por <strong>NEXCODE</strong></p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Header background on scroll
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('.header');
+            if (window.scrollY > 100) {
+                header.style.background = 'rgba(255, 255, 255, 0.98)';
+                header.style.boxShadow = '0 5px 20px rgba(0, 0, 0, 0.1)';
+            } else {
+                header.style.background = 'rgba(255, 255, 255, 0.95)';
+                header.style.boxShadow = 'none';
+            }
+        });
+
+        // Add animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animation = 'fadeInUp 0.8s ease-out forwards';
+                }
+            });
+        }, observerOptions);
+
+        // Observe all cards and sections
+        document.querySelectorAll('.service-card, .product-card, .pricing-category, .contact-card').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Floating frame animation
+        const floatingFrame = document.querySelector('.floating-frame');
+        if (floatingFrame) {
+            setInterval(() => {
+                floatingFrame.style.transform = `rotate(${Math.random() * 10 - 5}deg)`;
+            }, 3000);
+        }
+
+        // Add hover effect to CTA button
+        const ctaButton = document.querySelector('.cta-button');
+        if (ctaButton) {
+            ctaButton.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-3px) scale(1.05)';
+            });
+            
+            ctaButton.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0) scale(1)';
+            });
+        }
+
+        // Product card interactions
+        document.querySelectorAll('.product-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-15px) scale(1.02)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0) scale(1)';
+            });
+        });
+
+        // Add parallax effect to hero section
+        window.addEventListener('scroll', function() {
+            const scrolled = window.pageYOffset;
+            const heroImage = document.querySelector('.hero-image');
+            if (heroImage) {
+                heroImage.style.transform = `translateY(${scrolled * 0.1}px)`;
+            }
+        });
+
+        // Add loading animation
+        window.addEventListener('load', function() {
+            document.body.style.opacity = '0';
+            document.body.style.transition = 'opacity 0.5s ease-in';
+            setTimeout(() => {
+                document.body.style.opacity = '1';
+            }, 100);
+        });
+    </script>
+</body>
+</html>
